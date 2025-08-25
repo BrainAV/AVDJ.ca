@@ -503,9 +503,9 @@
           <span class="stat-number">1000+</span>
           <span class="stat-label">Events</span>
         </div>
-        <div class="stat-item">
+       <div class="stat-item">
           <span class="stat-number">2026</span>
-          <span class="stat-label">Bookings Open</span>
+        <span class="stat-label">Bookings Open</span>
         </div>
       </div>
       
@@ -654,7 +654,9 @@
           <li>• Travel outside of Region of Durham or Kawartha Lakes</li>
         </ul>
         
-        <p style="font-size: 0.9rem; color: #888; margin-top: 1rem;">Package prices subject to change without notice. All fees are subject to applicable taxes.</p>
+      <p style="font-size: 0.9rem; color: #888; margin-top: 1rem;">
+       Package prices subject to change without notice. All fees are subject to applicable taxes.
+     </p>
       </div>
     </section>
 
@@ -737,7 +739,7 @@
   </div>
 
   <footer>
-    <p>&copy; 2024 AVDJ Canada Special Events | Professional DJ Services in Ontario</p>
+    <p id="footer-year">&copy; 2026 AVDJ Canada Special Events | Professional DJ Services in Ontario</p>
     <p>Toronto (GTA) • Durham • Kawartha Lakes • Peterborough • Haliburton</p>
     <p style="margin-top: 1rem;">
       <a href="#top">Back to Top</a> | 
@@ -822,7 +824,10 @@
     // Update year dynamically
     document.addEventListener('DOMContentLoaded', function() {
       const currentYear = new Date().getFullYear();
-      document.querySelector('footer p').innerHTML = `&copy; ${currentYear} AVDJ Canada Special Events | Professional DJ Services in Ontario`;
+      const footerEl = document.getElementById('footer-year');
+      if (footerEl) {
+        footerEl.innerHTML = `&copy; ${currentYear} AVDJ Canada Special Events | Professional DJ Services in Ontario`;
+      }
     });
 
     // Add parallax effect to header

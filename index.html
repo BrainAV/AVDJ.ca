@@ -363,16 +363,16 @@
       border-radius: 8px;
       font-size: 0.9rem;
       opacity: 0;
-      pointer-events: none;
       transition: opacity 0.3s ease, transform 0.3s ease;
       white-space: nowrap;
       box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      z-index: 1000;
     }
     
-    .easter-egg:hover .easter-egg-text {
+    .easter-egg:hover .easter-egg-text,
+    .easter-egg-text:hover {
       opacity: 1;
       transform: translateX(-50%) translateY(-10px);
-      pointer-events: auto;
     }
     
     .easter-egg-text a {
@@ -848,7 +848,8 @@
     </p>
     <p>Toronto (GTA) • Durham • Kawartha Lakes • Peterborough • Haliburton</p>
     <p style="margin-top: 1rem;">
-      <a href="#top">Back to Top</a>
+      <a href="#top">Back to Top</a> | 
+      <a href="mailto:info@avdj.ca">info@avdj.ca</a>
     </p>
   </footer>
 
@@ -1000,7 +1001,24 @@
       setTimeout(() => {
         easterEggText.style.opacity = '0';
         easterEggText.style.transform = 'translateX(-50%)';
-      }, 3000);
+      }, 5000);
+    });
+
+    // Easter egg mouseleave handling
+    document.querySelector('.easter-egg').addEventListener('mouseleave', function() {
+      const easterEggText = this.querySelector('.easter-egg-text');
+      setTimeout(() => {
+        if (!easterEggText.matches(':hover')) {
+          easterEggText.style.opacity = '0';
+          easterEggText.style.transform = 'translateX(-50%)';
+        }
+      }, 200); // Slight delay to allow moving to the tooltip
+    });
+
+    // Keep tooltip visible when hovering over it
+    document.querySelector('.easter-egg-text').addEventListener('mouseleave', function() {
+      this.style.opacity = '0';
+      this.style.transform = 'translateX(-50%)';
     });
   </script>
 </body>

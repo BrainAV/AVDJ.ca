@@ -7,7 +7,12 @@
   <meta name="description" content="AVDJ Canada Special Events - Professional DJ services for weddings and special events in Toronto GTA, Durham, Kawartha Lakes, Peterborough, and Haliburton. 25+ years experience with DJ Jason Brain.">
   <meta name="keywords" content="AVDJ, wedding DJ Toronto, DJ services Durham, Kawartha Lakes DJ, Peterborough DJ, Haliburton DJ, special events DJ, corporate DJ, school DJ">
   <meta name="author" content="AVDJ Canada Special Events">
-  
+  <meta property="og:title" content="AVDJ Canada Special Events | Wedding DJ Services Toronto">
+  <meta property="og:description" content="Professional DJ services for weddings and special events in Toronto, Durham, Kawartha Lakes, and more.">
+  <meta property="og:image" content="path/to/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/png" href="path/to/favicon.png">
+
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     
@@ -21,7 +26,7 @@
     /* Header */
     header { 
       position: relative; 
-      height: 100vh; 
+      height: 80vh; 
       display: flex; 
       flex-direction: column; 
       justify-content: center; 
@@ -29,7 +34,7 @@
       text-align: center; 
       color: white; 
       background: linear-gradient(135deg, rgba(20, 34, 51, 0.9), rgba(26, 47, 66, 0.8)), 
-                  url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400"><defs><linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="%23142233"/><stop offset="100%" stop-color="%231a2f42"/></linearGradient></defs><rect width="100%" height="100%" fill="url(%23g)"/><circle cx="200" cy="100" r="3" fill="rgba(255,255,255,0.1)" opacity="0.8"/><circle cx="800" cy="200" r="2" fill="rgba(255,255,255,0.1)" opacity="0.6"/><circle cx="1000" cy="150" r="4" fill="rgba(255,255,255,0.1)" opacity="0.7"/><circle cx="400" cy="300" r="2" fill="rgba(255,255,255,0.1)" opacity="0.5"/></svg>') center/cover;
+                  url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400"><defs><linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="%23142233"/><stop offset="100%" stop-color="%231a2f42"/></linearGradient></defs><rect width="100%" height="100%" fill="url(%23g)"/></svg>') center/cover;
     }
     
     .header-gradient { 
@@ -87,8 +92,8 @@
     /* Main Container */
     .container { 
       max-width: 1200px; 
-      margin: 2rem auto; 
-      padding: 2rem; 
+      margin: -2rem auto 2rem; 
+      padding: 3rem; 
       background: white; 
       border-radius: 20px; 
       box-shadow: 0 10px 30px rgba(0,0,0,0.1);
@@ -98,6 +103,8 @@
     section { 
       margin: 4rem 0; 
       text-align: center; 
+      background: linear-gradient(180deg, #f8f9fa, #ffffff);
+      padding: 3rem 2rem;
     }
     
     h2 { 
@@ -172,7 +179,7 @@
     }
     
     .service-card p {
-      color: #666;
+      color: #555;
       line-height: 1.6;
       text-align: left;
     }
@@ -198,6 +205,12 @@
     .package-card:hover {
       transform: translateY(-8px);
       box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+    }
+    
+    .package-card.selected {
+      border: 3px solid #ff6f61;
+      transform: translateY(-8px);
+      box-shadow: 0 15px 40px rgba(255, 111, 97, 0.3);
     }
     
     .package-badge {
@@ -274,7 +287,8 @@
     }
     
     .form-group input,
-    .form-group textarea {
+    .form-group textarea,
+    .form-group select {
       width: 100%;
       padding: 0.8rem;
       border: 2px solid #ddd;
@@ -309,7 +323,7 @@
     
     .contact-info p {
       margin-bottom: 1rem;
-      color: #666;
+      color: #555;
       line-height: 1.6;
     }
 
@@ -406,11 +420,12 @@
 
     /* Responsive Design */
     @media (max-width: 768px) {
+      header { height: 70vh; }
       header h1 { font-size: 2.5rem; }
       header .subtitle { font-size: 1.4rem; }
       header p { font-size: 1rem; }
       
-      .container { padding: 1rem; }
+      .container { padding: 2rem; }
       
       .about-content {
         grid-template-columns: 1fr;
@@ -503,9 +518,9 @@
           <span class="stat-number">1000+</span>
           <span class="stat-label">Events</span>
         </div>
-       <div class="stat-item">
+        <div class="stat-item">
           <span class="stat-number">2026</span>
-        <span class="stat-label">Bookings Open</span>
+          <span class="stat-label">Bookings Open</span>
         </div>
       </div>
       
@@ -521,7 +536,7 @@
       <h2>Meet DJ Jason Brain</h2>
       <div class="about-content">
         <div>
-          <img src="https://via.placeholder.com/400x500/142233/ffffff?text=DJ+Jason+Brain" alt="DJ Jason Brain - AVDJ Canada Special Events" class="about-image">
+          <img src="path/to/dj-jason-brain.jpg" alt="DJ Jason Brain - AVDJ Canada Special Events" class="about-image" loading="lazy">
         </div>
         <div class="about-text">
           <p><strong>With hundreds of events and 25+ years of experience, DJ Jason Brain is one of the most recognized wedding DJs in Central Ontario.</strong></p>
@@ -538,7 +553,7 @@
     <!-- Services Section -->
     <section id="services" class="services">
       <h2>Our Services</h2>
-      <p style="font-size: 1.2rem; margin-bottom: 3rem; color: #666;">AVDJ is ready when you need us! Professional equipment, licensed music, and full liability insurance. Proud member of the CDJA (Canadian Disc Jockey Association).</p>
+      <p style="font-size: 1.2rem; margin-bottom: 3rem; color: #555;">AVDJ is ready when you need us! Professional equipment, licensed music, and full liability insurance. Proud member of the CDJA (Canadian Disc Jockey Association).</p>
       
       <div class="services-grid">
         <div class="service-card">
@@ -576,14 +591,14 @@
     <!-- Packages Section -->
     <section id="packages" class="packages">
       <h2>Wedding DJ Packages</h2>
-      <p style="font-size: 1.1rem; margin-bottom: 3rem; color: #666;">All packages end at midnight and include consultation, professional setup/breakdown, and our years of experience keeping dance floors packed!</p>
+      <p style="font-size: 1.1rem; margin-bottom: 3rem; color: #555;">All packages end at midnight and include consultation, professional setup/breakdown, and our years of experience keeping dance floors packed!</p>
       
       <div class="packages-grid">
         <div class="package-card">
           <div class="package-badge">BASIC</div>
           <h3>Simple Celebration</h3>
           <div class="package-price">$2000</div>
-          <p style="color: #666; margin-bottom: 1.5rem;">8PM to 12AM Midnight<br>Dance (DJ & MC)</p>
+          <p style="color: #555; margin-bottom: 1.5rem;">8PM to 12AM Midnight<br>Dance (DJ & MC)</p>
           <ul class="package-features">
             <li>Professional sound system & wireless microphones</li>
             <li>Custom playlist consultation & music curation</li>
@@ -596,7 +611,7 @@
           <div class="package-badge">STANDARD</div>
           <h3>Toast to Forever</h3>
           <div class="package-price">$2500</div>
-          <p style="color: #666; margin-bottom: 1.5rem;">5PM to 12AM Midnight<br>Dinner Music, Speeches, Dance (DJ & MC)</p>
+          <p style="color: #555; margin-bottom: 1.5rem;">5PM to 12AM Midnight<br>Dinner Music, Speeches, Dance (DJ & MC)</p>
           <ul class="package-features">
             <li>Everything in Simple Celebration</li>
             <li>Cocktail hour background music</li>
@@ -610,7 +625,7 @@
           <div class="package-badge">FULL DAY</div>
           <h3>From 'I Do' to Last Dance</h3>
           <div class="package-price">$3000</div>
-          <p style="color: #666; margin-bottom: 1.5rem;">3PM to 12AM Midnight<br>Ceremony, Cocktails, Dinner, Speeches, Dance</p>
+          <p style="color: #555; margin-bottom: 1.5rem;">3PM to 12AM Midnight<br>Ceremony, Cocktails, Dinner, Speeches, Dance</p>
           <ul class="package-features">
             <li>Everything in Toast to Forever</li>
             <li>Ceremony sound system & wireless microphones</li>
@@ -624,7 +639,7 @@
           <div class="package-badge">COMBO</div>
           <h3>Ultimate Experience</h3>
           <div class="package-price">$4000</div>
-          <p style="color: #666; margin-bottom: 1.5rem;">3PM to 12AM Midnight<br>Full Day + 4 Hour Photo Booth</p>
+          <p style="color: #555; margin-bottom: 1.5rem;">3PM to 12AM Midnight<br>Full Day + 4 Hour Photo Booth</p>
           <ul class="package-features">
             <li>Everything in From 'I Do' to Last Dance</li>
             <li>4 Hour Photo Booth Service</li>
@@ -634,17 +649,57 @@
           </ul>
         </div>
       </div>
+
+      <h2>Special Events Packages</h2>
+      <p style="font-size: 1.1rem; margin-bottom: 3rem; color: #555;">Perfect for birthdays, anniversaries, and more! Tailored entertainment to make your event unforgettable.</p>
+      <div class="packages-grid">
+        <div class="package-card">
+          <div class="package-badge">BIRTHDAY BASIC</div>
+          <h3>Basic Birthday Bash</h3>
+          <div class="package-price">$1000</div>
+          <p style="color: #555; margin-bottom: 1.5rem;">7PM to 11PM<br>DJ & MC Services</p>
+          <ul class="package-features">
+            <li>Professional sound system & wireless microphones</li>
+            <li>Custom playlist consultation</li>
+            <li>Basic lighting setup</li>
+            <li>4 hours of event coverage</li>
+          </ul>
+        </div>
+        <div class="package-card">
+          <div class="package-badge">DELUXE</div>
+          <h3>Deluxe Celebration</h3>
+          <div class="package-price">$1800</div>
+          <p style="color: #555; margin-bottom: 1.5rem;">6PM to 12AM<br>DJ, MC and Karaoke</p>
+          <ul class="package-features">
+            <li>Everything in Basic Birthday Bash</li>
+            <li>karaoke with Video Screens</li>
+            <li>Enhanced lighting & effects</li>
+            <li>6 hours of event coverage</li>
+          </ul>
+        </div>
+        <div class="package-card">
+          <div class="package-badge">FAM</div>
+          <h3>Family Afternoon Party Fun</h3>
+          <div class="package-price">$800</div>
+          <p style="color: #555; margin-bottom: 1.5rem;">3PM to 6PM<br>Kid-Friendly Entertainment</p>
+          <ul class="package-features">
+            <li>Kid-appropriate music</li>
+            <li>Basic sound system</li>
+            <li>3 hours of event coverage</li>
+          </ul>
+        </div>
+      </div>
       
       <div style="background: #f8f9fa; padding: 2rem; border-radius: 15px; margin: 2rem 0; text-align: left;">
         <h4 style="color: #142233; margin-bottom: 1rem;">Included With All Events:</h4>
-        <ul style="list-style: none; color: #666;">
+        <ul style="list-style: none; color: #555;">
           <li>• Basic Consultation and Free Quotes</li>
           <li>• 2 Cordless microphones</li>
           <li>• Basic DJ Lighting & Sound System</li>
         </ul>
         
         <h4 style="color: #142233; margin: 1.5rem 0 1rem 0;">Optional Extras:</h4>
-        <ul style="list-style: none; color: #666;">
+        <ul style="list-style: none; color: #555;">
           <li>• Wedding Ceremony Music & Mics</li>
           <li>• Photo Booth Services (Min 3hrs)</li>
           <li>• Karaoke (Projector and/or TVs)</li>
@@ -654,21 +709,21 @@
           <li>• Travel outside of Region of Durham or Kawartha Lakes</li>
         </ul>
         
-      <p style="font-size: 0.9rem; color: #888; margin-top: 1rem;">
-       Package prices subject to change without notice. All fees are subject to applicable taxes.
-     </p>
+        <p style="font-size: 0.9rem; color: #888; margin-top: 1rem;">
+          Package prices subject to change without notice. All fees are subject to applicable taxes.
+        </p>
       </div>
     </section>
 
     <!-- Contact Section -->
     <section id="contact" class="contact">
       <h2>How to Contact AVDJ</h2>
-      <p style="font-size: 1.1rem; margin-bottom: 3rem; color: #666;">Ready to plan your unforgettable celebration? Fill out the form to discuss your vision, and we'll respond within one business day.</p>
+      <p style="font-size: 1.1rem; margin-bottom: 3rem; color: #555;">Ready to plan your unforgettable celebration? Fill out the form to discuss your vision, and we'll respond within one business day.</p>
       
       <div class="contact-grid">
         <div class="contact-form">
           <h3>Get Your Free Quote</h3>
-          <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+          <form action="https://formspree.io/f/your-actual-form-id" method="POST">
             <div class="form-group">
               <label for="name">Name *</label>
               <input type="text" id="name" name="name" required>
@@ -690,8 +745,8 @@
             </div>
             
             <div class="form-group">
-              <label for="event-type">Event Type</label>
-              <select id="event-type" name="event-type" style="width: 100%; padding: 0.8rem; border: 2px solid #ddd; border-radius: 8px; font-size: 1rem;">
+              <label crops="event-type">Event Type</label>
+              <select id="event-type" name="event-type">
                 <option value="">Select Event Type</option>
                 <option value="wedding">Wedding</option>
                 <option value="corporate">Corporate Event</option>
@@ -747,7 +802,7 @@
     </p>
   </footer>
 
-  <button class="scroll-to-top" onclick="document.getElementById('top').scrollIntoView({behavior: 'smooth'})" id="scrollToTop">↑</button>
+  <button class="scroll-to-top" aria-label="Scroll to top" onclick="document.getElementById('top').scrollIntoView({behavior: 'smooth'})" id="scrollToTop">↑</button>
 
   <script>
     // Smooth scrolling for navigation links
@@ -764,10 +819,20 @@
       });
     });
 
-    // Show/hide scroll to top button
+    // ARIA for navigation links
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', function() {
+        document.querySelectorAll('.nav-links a').forEach(l => l.removeAttribute('aria-current'));
+        this.setAttribute('aria-current', 'page');
+      });
+    });
+
+    // Show/hide scroll to top button and navbar
     window.addEventListener('scroll', function() {
       const scrollToTop = document.getElementById('scrollToTop');
       const navbar = document.getElementById('navbar');
+      let lastScrollTop = 0;
+      let timeout;
       
       if (window.pageYOffset > 300) {
         scrollToTop.style.display = 'block';
@@ -775,16 +840,17 @@
         scrollToTop.style.display = 'none';
       }
       
-      // Hide navbar on scroll down, show on scroll up
-      let lastScrollTop = 0;
       let st = window.pageYOffset || document.documentElement.scrollTop;
-      
+      clearTimeout(timeout);
       if (st > lastScrollTop && st > 100) {
         navbar.classList.add('nav-hidden');
       } else {
         navbar.classList.remove('nav-hidden');
       }
       lastScrollTop = st <= 0 ? 0 : st;
+      timeout = setTimeout(() => {
+        navbar.classList.remove('nav-hidden');
+      }, 1000);
     });
 
     // Animate elements on scroll
@@ -801,7 +867,6 @@
       });
     }, observerOptions);
 
-    // Observe all sections for animation
     document.addEventListener('DOMContentLoaded', function() {
       document.querySelectorAll('section').forEach(section => {
         observer.observe(section);
@@ -809,16 +874,28 @@
     });
 
     // Form submission handling
-    document.querySelector('form').addEventListener('submit', function(e) {
+    document.querySelector('form').addEventListener('submit', async function(e) {
+      e.preventDefault();
       const submitBtn = document.querySelector('.submit-btn');
       submitBtn.textContent = 'Sending...';
       submitBtn.disabled = true;
-      
-      // Re-enable button after 3 seconds (in case of issues)
-      setTimeout(() => {
-        submitBtn.textContent = 'Send Message';
-        submitBtn.disabled = false;
-      }, 3000);
+      try {
+        const response = await fetch(this.action, {
+          method: this.method,
+          body: new FormData(this),
+          headers: { 'Accept': 'application/json' }
+        });
+        if (response.ok) {
+          this.reset();
+          alert('Thank you! Your message has been sent.');
+        } else {
+          alert('There was an error. Please try again.');
+        }
+      } catch (error) {
+        alert('Network error. Please try again later.');
+      }
+      submitBtn.textContent = 'Send Message';
+      submitBtn.disabled = false;
     });
 
     // Update year dynamically
@@ -834,7 +911,7 @@
     window.addEventListener('scroll', function() {
       const scrolled = window.pageYOffset;
       const parallax = document.querySelector('header');
-      const speed = scrolled * 0.5;
+      const speed = scrolled * 0.3;
       
       if (parallax) {
         parallax.style.transform = `translateY(${speed}px)`;
@@ -843,33 +920,26 @@
 
     // Package card interaction
     function selectPackage(card) {
-      // Remove selected class from all cards
       document.querySelectorAll('.package-card').forEach(c => c.classList.remove('selected'));
-      
-      // Add selected class to clicked card
       card.classList.add('selected');
-      
-      // Scroll to contact form
       document.getElementById('contact').scrollIntoView({behavior: 'smooth'});
-      
-      // Pre-fill the form with package info
       const packageName = card.querySelector('h3').textContent;
       const messageField = document.getElementById('message');
+      const eventType = document.getElementById('event-type');
       if (messageField && !messageField.value) {
         messageField.value = `I'm interested in the ${packageName} package. Please send me more information.`;
       }
+      if (packageName.includes('Birthday') || packageName.includes('FAM')) {
+        eventType.value = 'special';
+      } else if (packageName.includes('Wedding') || packageName.includes('Celebration') || packageName.includes('Forever')) {
+        eventType.value = 'wedding';
+      }
     }
 
-    // Add selected package styling
-    const selectedPackageStyle = `
-      .package-card.selected {
-        border: 3px solid #ff6f61;
-        transform: translateY(-8px);
-        box-shadow: 0 15px 40px rgba(255, 111, 97, 0.3);
-      }
-    `;
-    
-    const style = document.createElement('style');
-    style.textContent = selectedPackageStyle;
-    document.head.appendChild(style);
+    // Attach click event to package cards
+    document.querySelectorAll('.package-card').forEach(card => {
+      card.addEventListener('click', () => selectPackage(card));
+    });
   </script>
+</body>
+</html>

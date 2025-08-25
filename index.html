@@ -334,6 +334,7 @@
       text-align: center; 
       padding: 2rem; 
       margin-top: 3rem;
+      position: relative;
     }
     
     footer a { 
@@ -343,6 +344,44 @@
     
     footer a:hover { 
       text-decoration: underline; 
+    }
+
+    /* Easter Egg */
+    .easter-egg {
+      position: relative;
+      display: inline-block;
+    }
+    
+    .easter-egg-text {
+      position: absolute;
+      bottom: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: linear-gradient(135deg, #ff6f61, #142233);
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+      white-space: nowrap;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+    
+    .easter-egg:hover .easter-egg-text {
+      opacity: 1;
+      transform: translateX(-50%) translateY(-10px);
+      pointer-events: auto;
+    }
+    
+    .easter-egg-text a {
+      color: white;
+      text-decoration: none;
+    }
+    
+    .easter-egg-text a:hover {
+      text-decoration: underline;
     }
 
     /* Navigation */
@@ -443,6 +482,11 @@
       }
       
       h2 { font-size: 2rem; }
+      
+      .easter-egg-text {
+        font-size: 0.8rem;
+        padding: 0.4rem 0.8rem;
+      }
     }
 
     /* Animations */
@@ -796,7 +840,12 @@
   </div>
 
   <footer>
-    <p id="footer-year">&copy; 2026 AVDJ Canada Special Events | Professional DJ Services in Ontario</p>
+    <p id="footer-year" class="easter-egg">
+      <span>&copy; 2026 AVDJ Canada Special Events | Professional DJ Services in Ontario</span>
+      <span class="easter-egg-text">
+        <a href="https://jasonbra1n.github.io/kathara-spiral/" target="_blank" rel="noopener" aria-label="Discover free audio-reactive visuals">Discover a cosmic twist: enable audio-reactive mode and auto-rotation for a divine experience</a>
+      </span>
+    </p>
     <p>Toronto (GTA) • Durham • Kawartha Lakes • Peterborough • Haliburton</p>
     <p style="margin-top: 1rem;">
       <a href="#top">Back to Top</a> | 
@@ -905,7 +954,7 @@
       const currentYear = new Date().getFullYear();
       const footerEl = document.getElementById('footer-year');
       if (footerEl) {
-        footerEl.innerHTML = `&copy; ${currentYear} AVDJ Canada Special Events | Professional DJ Services in Ontario`;
+        footerEl.firstElementChild.innerHTML = `&copy; ${currentYear} AVDJ Canada Special Events | Professional DJ Services in Ontario`;
       }
     });
 
@@ -941,6 +990,18 @@
     // Attach click event to package cards
     document.querySelectorAll('.package-card').forEach(card => {
       card.addEventListener('click', () => selectPackage(card));
+    });
+
+    // Easter egg touch support for mobile
+    document.querySelector('.easter-egg').addEventListener('touchstart', function(e) {
+      e.preventDefault();
+      const easterEggText = this.querySelector('.easter-egg-text');
+      easterEggText.style.opacity = '1';
+      easterEggText.style.transform = 'translateX(-50%) translateY(-10px)';
+      setTimeout(() => {
+        easterEggText.style.opacity = '0';
+        easterEggText.style.transform = 'translateX(-50%)';
+      }, 3000);
     });
   </script>
 </body>

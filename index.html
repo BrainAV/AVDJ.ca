@@ -1138,12 +1138,29 @@
       animation: slideInRight 0.8s ease-out;
     }
 
-/* Add a class to the element */
-.g-recaptcha-response {
-  opacity: 0.5; /* adjust the value as needed */
+
+    .g-recaptcha {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(20px);
+  border-radius: 12px;
+  padding: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  opacity: 0.9;
 }
 
-/* Your existing CSS */
+.g-recaptcha iframe {
+  border: none;
+}
+
+/* Keep your existing .g-recaptcha-response styling */
+.g-recaptcha-response {
+  opacity: 0.5;
+}
+
 #g-recaptcha-response {
   display: block !important;
   position: absolute;
@@ -1152,17 +1169,7 @@
   opacity: 0;
 }
 
-.g-recaptcha {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 30px; 
-  background-color: transparent !important;
-}
 
-.g-recaptcha iframe {
-  background-color: transparent !important;
-}
 
   </style>
 </head>
@@ -1620,8 +1627,8 @@
             <textarea id="event-details" name="event-details" required placeholder="Tell us about your event vision, timeline preferences, special requests, cultural considerations, must-play songs, or anything else that will help us make your event perfect..."></textarea>
           </div>
           
-          <div id="recaptcha-container" class="g-recaptcha" data-sitekey="6Lf_Rs4rAAAAAEuvP7GykkQySpiQjMOcQ7GhiSba"></div> <!-- replace with your recaptcha SITE key not secret key -->
-          
+        
+          <div id="recaptcha-container" class="g-recaptcha" data-sitekey="6Lf_Rs4rAAAAAEuvP7GykkQySpiQjMOcQ7GhiSba" data-theme="dark"></div>
           <button type="submit" class="submit-btn">Get Your Free Quote</button>
         </form>
       </div>

@@ -2042,6 +2042,14 @@ opacity: 0;
       }
     `;
     document.head.appendChild(pulseStyle);
+
+     // javascript to make rechapcha required
+window.onload = function() { 
+  var el = document.getElementById('g-recaptcha-response'); 
+  if (el) { 
+    el.setAttribute('required', 'required'); 
+  } 
+}
   </script>
 
   <!-- Additional SEO structured data for AVDJ -->
@@ -2099,14 +2107,6 @@ opacity: 0;
       ]
     }
   }
-
- // javascript to make rechapcha required
-window.onload = function() { 
-  var el = document.getElementById('g-recaptcha-response'); 
-  if (el) { 
-    el.setAttribute('required', 'required'); 
-  } 
-}
   </script>
 </body>
 </html>

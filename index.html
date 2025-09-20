@@ -1137,6 +1137,15 @@
     .slide-in-right {
       animation: slideInRight 0.8s ease-out;
     }
+
+    /* CSS */
+#g-recaptcha-response {
+display: block !important;
+position: absolute;
+margin: -50px 0 0 0 !important;
+z-index: -999999;
+opacity: 0;
+}
   </style>
 </head>
 <body>
@@ -2090,6 +2099,14 @@
       ]
     }
   }
+
+ // javascript to make rechapcha required
+window.onload = function() { 
+  var el = document.getElementById('g-recaptcha-response'); 
+  if (el) { 
+    el.setAttribute('required', 'required'); 
+  } 
+}
   </script>
 </body>
 </html>

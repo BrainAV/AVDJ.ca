@@ -214,6 +214,7 @@
       text-transform: uppercase;
       letter-spacing: 1px;
       box-shadow: 0 8px 25px rgba(255, 107, 53, 0.5);
+      white-space: nowrap;
     }
     
     .main-cta:hover { 
@@ -233,6 +234,8 @@
       margin: 0.8rem;
       font-weight: 600;
       backdrop-filter: blur(10px);
+      text-decoration: none;
+      white-space: nowrap;
     }
 
     .secondary-cta:hover {
@@ -1015,6 +1018,7 @@
       margin: 1.5rem 0.5rem;
       transition: all 0.3s ease;
       font-size: 1.1rem;
+      white-space: nowrap;
     }
 
     .phone-cta:hover {
@@ -1186,6 +1190,7 @@
         <li><a href="#coverage">Coverage</a></li>
         <li><a href="#services">Services</a></li>
         <li><a href="#packages">Packages</a></li>
+        <li><a href="https://flightdeck.avdj.ca" target="_blank">AViator Academy</a></li>
         <li><a href="#contact">Book Now</a></li>
       </ul>
       
@@ -1205,6 +1210,7 @@
       <li><a href="#coverage" onclick="closeMobileNav()">Coverage</a></li>
       <li><a href="#services" onclick="closeMobileNav()">Services</a></li>
       <li><a href="#packages" onclick="closeMobileNav()">Packages</a></li>
+      <li><a href="https://flightdeck.avdj.ca" target="_blank" onclick="closeMobileNav()">AViator Academy</a></li>
       <li><a href="#contact" onclick="closeMobileNav()">Book Now</a></li>
     </ul>
   </div>
@@ -1240,6 +1246,9 @@
         <button class="secondary-cta" onclick="document.getElementById('packages').scrollIntoView({behavior: 'smooth'})">
           View Packages & Pricing
         </button>
+        <a href="https://flightdeck.avdj.ca" target="_blank" class="secondary-cta aviator-academy-cta">
+          🚀 AViator Academy
+        </a>
         <a href="tel:+1-705-213-3456" class="phone-cta">📞 Call (705) 213-3456</a>
       </div>
     </div>

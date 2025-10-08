@@ -832,6 +832,41 @@
       width: 100%;
     }
 
+    /* Dropdown Menu for Navigation */
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: rgba(10, 10, 26, 0.98);
+      backdrop-filter: blur(15px);
+      min-width: 200px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+      border-radius: 10px;
+      margin-top: 10px;
+      border: 1px solid rgba(255, 107, 53, 0.3);
+      overflow: hidden;
+    }
+
+    .dropdown-content a {
+      color: white;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .dropdown-content a:hover {
+      background-color: rgba(255, 107, 53, 0.2);
+      color: #ff6b35;
+    }
+
+    .dropdown:hover .dropdown-content { display: block; }
+
     /* Mobile Hamburger Menu */
     .hamburger {
       display: none;
@@ -1183,14 +1218,20 @@
     <div class="nav-container">
       <a href="#top" class="logo">
         <span class="logo-icon">🎵</span>
-        AVDJ<span>Canada</span><span class="premium-badge">25+ Years</span>
+        AVDJ<span>Canada</span>
       </a>
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
         <li><a href="#coverage">Coverage</a></li>
         <li><a href="#services">Services</a></li>
         <li><a href="#packages">Packages</a></li>
-        <li><a href="https://flightdeck.avdj.ca" target="_blank">AViator Academy</a></li>
+        <li class="dropdown">
+          <a href="javascript:void(0)" class="dropbtn">Apps</a>
+          <div class="dropdown-content">
+            <a href="https://flightdeck.avdj.ca" target="_blank">AViator Academy</a>
+            <a href="#">Visuals</a>
+          </div>
+        </li>
         <li><a href="#contact">Book Now</a></li>
       </ul>
       
@@ -1210,7 +1251,8 @@
       <li><a href="#coverage" onclick="closeMobileNav()">Coverage</a></li>
       <li><a href="#services" onclick="closeMobileNav()">Services</a></li>
       <li><a href="#packages" onclick="closeMobileNav()">Packages</a></li>
-      <li><a href="https://flightdeck.avdj.ca" target="_blank" onclick="closeMobileNav()">AViator Academy</a></li>
+      <li><a href="https://flightdeck.avdj.ca" target="_blank">AViator Academy</a></li>
+      <li><a href="#" onclick="closeMobileNav()">Visuals</a></li>
       <li><a href="#contact" onclick="closeMobileNav()">Book Now</a></li>
     </ul>
   </div>

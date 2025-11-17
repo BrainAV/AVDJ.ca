@@ -86,7 +86,8 @@
     /* Header */
     header { 
       position: relative; 
-      height: 100vh; 
+      min-height: 100vh; /* Use min-height to prevent content overflow on small screens */
+      max-height: 1200px; /* Optional: Prevents header from being excessively large on very tall screens */
       display: flex; 
       flex-direction: column; 
       justify-content: center; 
@@ -95,7 +96,7 @@
       color: white; 
       background: linear-gradient(135deg, rgba(10, 10, 26, 0.9), rgba(26, 26, 46, 0.8)), 
                   url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><defs><linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="%23ff6b35" stop-opacity="0.4"/><stop offset="50%" stop-color="%23f7931e" stop-opacity="0.2"/><stop offset="100%" stop-color="%23ffcd3c" stop-opacity="0.3"/></linearGradient></defs><rect width="100%" height="100%" fill="%230a0a1a"/><circle cx="300" cy="200" r="100" fill="url(%23grad1)"/><circle cx="900" cy="600" r="150" fill="url(%23grad1)"/><circle cx="600" cy="100" r="80" fill="url(%23grad1)"/></svg>') center/cover;
-      padding: 2rem 0;
+      padding: 6rem 1rem 4rem; /* Adjust padding for nav bar height and bottom space */
     }
     
     .header-overlay {
@@ -117,11 +118,11 @@
     .avdj-badge {
       background: linear-gradient(135deg, #ff6b35, #f7931e);
       color: white;
-      padding: 1rem 2.5rem;
+      padding: .5rem 2.5rem;
       border-radius: 35px;
       font-size: 1.1rem;
       font-weight: bold;
-      margin: 8rem 1rem 2rem; 
+      margin: .5rem 1rem 2rem; 
       text-transform: uppercase;
       letter-spacing: 1.5px;
       box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
@@ -1127,8 +1128,8 @@
 
       .avdj-badge {
         font-size: 1rem;
-        padding: 0.8rem 2rem;
-        margin: 14rem 1rem 2rem; 
+        padding: .5rem 2rem;
+        margin: 5rem 1rem 2rem; 
       }
 
       .main-cta {
@@ -1574,28 +1575,28 @@
           <div class="package-title">Reception Package</div>
           <div class="package-time">8PM to 12AM Midnight</div>
           <div class="package-description">Dance (DJ & MC)</div>
-          <div class="package-price">Starting at $1200</div>
+          <div class="package-price">Starting at $1500</div>
         </div>
         
         <div class="package-card">
           <div class="package-title">Dinner & Dance</div>
           <div class="package-time">5PM to 12AM Midnight</div>
           <div class="package-description">Dinner Music, Speeches, Dance (DJ & MC)</div>
-          <div class="package-price">Starting at $1500</div>
+          <div class="package-price">Starting at $2000</div>
         </div>
         
         <div class="package-card">
           <div class="package-title">Full Wedding Day</div>
           <div class="package-time">3PM to 12AM Midnight</div>
           <div class="package-description">Ceremony, Cocktails, Dinner, Speeches, Dance</div>
-          <div class="package-price">Starting at $2000</div>
+          <div class="package-price">Starting at $2500</div>
         </div>
         
         <div class="package-card">
           <div class="package-title">Premium Package</div>
           <div class="package-time">3PM to 12AM Midnight</div>
           <div class="package-description">Full Day + 4 Hour Photo Booth</div>
-          <div class="package-price">Starting at $3000</div>
+          <div class="package-price">Starting at $4000</div>
         </div>
         
         <div class="package-card">
